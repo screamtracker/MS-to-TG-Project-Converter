@@ -26,7 +26,7 @@ This utility solves the data-drift constraint by executing a **Full-Scale Data P
 Ensure the following files remain grouped in your working directory:
 *   `dx2_decompress.py`     - Unpacks the continuous LZ4 chunk compression layer inside Elektron packages.
 *   `dx2_compress.py`       - Repacks flat binaries back into validation-signed container files.
-*   `ms_to_tg_converter.py` - Handles device header identification swaps, project name string restoral, and layout block integration.
+*   `ms_to_tg_converter.py` - Handles device header ID swaps, project name string restoral, layout block integration.
 *   `batch_convert.py`      - The automated main script that runs the entire pipeline end-to-end.
 
 ## Prerequisites
@@ -42,9 +42,9 @@ Before running a conversion loop, you must capture a stable memory map baseline 
 2. Export this project from your machine using **Elektron Transfer** (`TstTG.mcprj`).
 3. Decompress the template archive to raw binary using the decompression tool:
    ```bash
-   python dx2_decompress.py TstTG.mcprj TstTG_Flat.bin
+   python dx2_decompress.py TstTG.mcprj TG_Empty_Flat.bin
    ```
-4. Ensure the resulting **`TstTG_Flat.bin`** file sits inside your main converter directory workspace.
+4. Ensure the resulting **`TG_Empty_Flat.bin`** file sits inside your main converter directory workspace.
 
 ## Usage
 
@@ -64,7 +64,7 @@ cp MyProject.msprj temp_archive.zip
 python dx2_decompress.py temp_archive.zip MS_Flat.bin
 
 # 2. Forge the structural translation bridge profile
-python ms_to_tg_converter.py MS_Flat.bin TstTG_Flat.bin TG_Bridged.bin
+python ms_to_tg_converter.py MS_Flat.bin TG_Empty_Flat.bin TG_Bridged.bin
 
 # 3. Compile the container with the Model:Cycles hardware ID marker (45)
 python dx2_compress.py TG_Bridged.bin MyProject.mcprj MyProject 45
