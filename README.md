@@ -10,8 +10,8 @@ This tool allows you to safely migrate your extensive library of patterns, step 
 While the TG sample engine has the parameters of the Model Samples, the sample assignments are store in the main file, not in a Sample folder with hash mapping in the JSON found in the .msprj file.
 So the mappings are lost no matter what. :(
 
-You must add the files to the device (Ive found setting the Device mode to SMP and dragging in the .msprj file, preserving the original file structure to work well. It will load the samples first then fail on the project).
-Then once you import the converted .mcprj file you must assign each track to sample engine and assign the desired sample. I have an additional M:S so side by side makes this easy, ymmv.
+You must add the samples to the device (Ive found setting the Device mode to SMP and dragging in the .msprj file, preserving the original file structure to works well. It loads the samples first then fails on project import).
+After importing the converted .mcprj file you must assign each track to sample engine and assign the desired sample. I have an additional M:S so side by side makes this easy, ymmv.
 
 However once mapped the patterns are restored and faithful to running natively on the M:S.
 
