@@ -3,11 +3,16 @@
 A Python-based utility pipeline designed to automatically batch-convert **Model:Samples (`.msprj`)** project files into stable, loadable **Model:Cycles / Model-TG (`.mcprj`)** project files.
 This tool allows you to safely migrate your extensive library of patterns, step grids, microtiming vectors, velocities, and sound design parameter settings from a stock Model:Samples setup straight onto hardware running the custom **Model-TG custom firmware**.
 
+<img width="618" height="598" alt="image" src="https://github.com/user-attachments/assets/c33c36b9-99c1-4fb4-b3bc-e7ae7518366f" />
+
+
 ## No automatic sample assignments
 While the TG sample engine has the parameters of the Model Samples, the sample assignments are store in the main file, not in a Sample folder with hash mapping in the JSON found in the .msprj file.
 So the mappings are lost no matter what. :(
+
 You must add the files to the device (Ive found setting the Device mode to SMP and dragging in the .msprj file, preserving the original file structure to work well. It will load the samples first then fail on the project).
 Then once you import the converted .mcprj file you must assign each track to sample engine and assign the desired sample. I have an additional M:S so side by side makes this easy, ymmv.
+
 However once mapped the patterns are restored and faithful to running natively on the M:S.
 
 ## How It Works
@@ -74,3 +79,4 @@ Because the Model-TG custom firmware targets a shared global sample directory on
 
 ## Disclaimer
 This is an experimental community utility. Always ensure your original pattern files are backed up safely on your computer storage before processing them through conversion pipelines.
+
